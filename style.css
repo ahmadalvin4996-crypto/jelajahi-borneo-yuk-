@@ -1,0 +1,282 @@
+/* ==================================== */
+/* 1. VARIABEL & RESET DASAR            */
+/* ==================================== */
+
+:root {
+    --color-primary: #38761D; /* Hijau Hutan Tua */
+    --color-secondary: #FFC000; /* Kuning Emas/Hiasan */
+    --color-accent: #A64D79; /* Merah Marun Tua/Etnik */
+    --color-text: #333333;
+    --color-background: #25ca25; /* Latar Belakang Lembut */
+    --color-card-bg: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif; /* Font dengan sentuhan tradisional */
+    margin: 0;
+    padding: 0;
+   background-color: #12d868; /* Tambahkan warna hijau muda solid */
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* ==================================== */
+/* 2. HEADER & NAVIGASI                 */
+/* ==================================== */
+
+header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    letter-spacing: 3px;
+    font-weight: 900;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    font-weight: bold;
+    transition: background-color 0.4s, color 0.4s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}
+
+/* ==================================== */
+/* 3. HERO SECTION (Beranda)            */
+/* ==================================== */
+
+#hero {
+    /* Placeholder: Ganti dengan URL gambar hutan atau budaya yang Anda miliki */
+    background: url('placeholder-hutan-kalimantan.jpg') no-repeat center center/cover;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay yang lebih gelap */
+    /* Hiasan Pola Etnik (Opsional) */
+    /* background-image: url('motif-dayak-transparan.png'); */
+    /* background-repeat: repeat; */
+}
+
+#hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+#hero h2 {
+    font-size: 3.5em;
+    margin-bottom: 5px;
+    text-shadow: 3px 3px 6px #000;
+    color: var(--color-secondary); /* Warna Emas */
+    font-family: 'Arial Black', sans-serif;
+}
+
+#hero p {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+/* ==================================== */
+/* 4. TATA LETAK UTAMA & JUDUL          */
+/* ==================================== */
+
+main {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    color: var(--color-accent); /* Merah Marun */
+    font-size: 2.5em;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-secondary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Ornamen Etnik (Hiasan Pemanis) */
+.ornament {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 1.8em;
+    color: var(--color-primary);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ==================================== */
+/* 5. GRID KARTU MENU BUDAYA            */
+/* ==================================== */
+
+.budaya-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.budaya-card {
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.budaya-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.budaya-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.budaya-card:hover img {
+    opacity: 0.9;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    color: var(--color-accent);
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 0.95em;
+}
+        
+.card-content a {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.card-content a:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}
+
+/* ==================================== */
+/* 6. SECTION LAINNYA & FOOTER          */
+/* ==================================== */
+
+#tentang p {
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+footer {
+    background-color: var(--color-text);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 60px;
+    font-size: 0.9em;
+}
+
+/* ==================================== */
+/* 7. RESPONSIF (Mobile Friendly)       */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li a {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    #hero {
+        height: 300px;
+    }
+
+    #hero h2 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .budaya-grid {
+        grid-template-columns: 1fr; /* Satu kolom di layar kecil */
+    }
+}

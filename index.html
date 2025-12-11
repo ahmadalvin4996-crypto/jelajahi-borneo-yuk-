@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Borneo: Budaya Kalimantan</title>
+    <style>
+        /* Gaya Dasar dan Palet Warna Terinspirasi Alam Borneo */
+    :root {
+        --color-primary: #38761D; /* Hijau Hutan Tua */
+        --color-secondary: #FFC000; /* Kuning Emas/Hiasan */
+        --color-accent: #A64D79; /* Merah Marun Tua/Etnik */
+        --color-text: #333333;
+        --color-background: #F4F4F4; /* Latar Belakang Lembut */
+        --color-card-bg: #FFFFFF;
+    }
+
+    /* KODE BARU UNTUK SMOOTH SCROLLING */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+        }
+
+        /* Navigasi */
+        header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            background: url('background-burung.jpg') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+        }
+
+        #hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        #hero h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        /* Konten Utama */
+        main {
+            padding: 20px 5%;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--color-primary);
+            border-bottom: 3px solid var(--color-secondary);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        /* Gaya Dropdown dan Artikel */
+        #dropdown-artikel {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        #artikel-selector {
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid var(--color-primary);
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        #artikel-container {
+            /* Kontainer Artikel */
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--color-card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            line-height: 1.6;
+            /* Penting: Default disembunyikan */
+            display: none; 
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        /* Kelas untuk menampilkan artikel */
+        #artikel-container.show {
+            display: block;
+            opacity: 1;
+        }
+
+
+        #artikel-container h3 {
+            color: var(--color-accent);
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+        
+        #artikel-container p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+
+        /* Grid Kartu Menu Budaya */
+        .budaya-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .budaya-card {
+            background-color: var(--color-card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .budaya-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .budaya-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: var(--color-accent);
+            margin-top: 0;
+        }
+        
+        .card-content a {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-text);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Desain Ornamen Etnik */
+        .ornament {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5em;
+            color: var(--color-secondary);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jelajah Borneo Yuk!</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero">Beranda</a></li>
+                <li><a href="#dropdown-artikel">Artikel</a></li> 
+                <li><a href="#menu-budaya">Menu Budaya</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div id="hero-content">
+            <h2>Warisan Budaya Kalimantan yang Memukau</h2>
+            <p>Telusuri Sejarah, Filosofi, dan Keindahan Seni Tradisional Dayak dan Melayu.</p>
+        </div>
+    </section>
+
+    <main>
+        
+        <div class="ornament">✨ KUNJUNGI NUSANTARA ✨</div>
+        
+        <section id="dropdown-artikel">
+            <h2>Pilih Topik Utama</h2>
+            <select id="artikel-selector">
+                <option value="none">-- Klik untuk Baca Artikel --</option>
+                <option value="kalimantan-utama">Kalimantan: Jantung Budaya dan Alam</option>
+            </select>
+        </section>
+        
+        <div id="artikel-container">
+            <h3>Kalimantan: Jantung Budaya dan Alam Indonesia</h3>
+            
+            <p>Kalimantan, yang dikenal sebagai pulau ketiga terbesar di dunia, adalah rumah bagi keanekaragaman hayati yang menakjubkan dan warisan budaya yang kaya. Dikelilingi oleh hutan hujan tropis yang lebat—salah satu yang tertua di dunia—pulau ini menyimpan kekayaan alam dan spiritual yang tak tertandingi.</p>
+            
+            <p>Secara budaya, Kalimantan adalah mozaik etnis, didominasi oleh **Suku Dayak** dan **Suku Melayu**. Masyarakat Dayak, dengan filosofi hidup yang terikat erat dengan alam (dikenal sebagai **Kaharingan**), telah menciptakan tradisi seni rupa yang khas, terutama terlihat pada ukiran, tato (batik) tradisional, dan rumah adat mereka, **Rumah Betang**.</p>
+            
+            <p>Sementara itu, kawasan pesisir didominasi oleh budaya Melayu yang dipengaruhi Islam, menghasilkan kerajinan tekstil seperti **Sasirangan** (Kalimantan Selatan) dan arsitektur istana kerajaan yang megah. Keharmonisan antara kedua budaya besar ini menciptakan khazanah Kalimantan yang unik, sebuah pulau di mana tradisi kuno bertemu dengan tantangan modernisasi.</p>
+            
+            <p style="text-align: right; font-style: italic; color: var(--color-accent);">— Sumber: Konten Eksklusif Jelajah Borneo</p>
+            
+        </div>
+        <div class="ornament">🌿 FIND YOUR SPIRIT EXPLORE BORNEO 🌿</div>
+        
+        <section id="menu-budaya">
+            <h2>Kategori Budaya Kalimantan</h2>
+            
+            <div class="budaya-grid">
+                <div class="budaya-card">
+                    <img src="rumah-betang.jpg" alt="Foto Rumah Betang">
+                    <div class="card-content">
+                        <h3>🏡 Arsitektur & Permukiman</h3>
+                        <p>Mendalami filosofi di balik Rumah Betang dan Rumah Banjar Bubungan Tinggi.</p>
+                        <a href="rumahbetang.html">Jelajahi</a>
+                    </div>
+                </div>
+
+                <div class="budaya-card">
+                    <img src="tarienggang.jpg" alt="Foto Tari Enggang">
+                    <div class="card-content">
+                        <h3>🎭 Seni Pertunjukan</h3>
+                        <p>Mengulik keindahan gerakan Tari Enggang, Hudoq, dan alunan Sape'.</p>
+                        <a href="gerakantari.html">Jelajahi</a>
+                    </div>
+                </div>
+
+                <div class="budaya-card">
+                    <img src="juhu-singkah.jpg" alt="Foto Juhu Singkah">
+                    <div class="card-content">
+                        <h3>🍲 Kuliner Khas</h3>
+                        <p>Menjelajahi cita rasa otentik dari Juhu Singkah, Soto Banjar, hingga Amplang.</p>
+                        <a href="kulinerkhas.html">Jelajahi</a>
+                    </div>
+                </div>
+                
+                <div class="budaya-card">
+                    <img src="ukiran-dayak.jpg" alt="Foto Ukiran Dayak">
+                    <div class="card-content">
+                        <h3>🖼️ Kerajinan & Tekstil</h3>
+                        <p>Makna di balik ukiran Dayak, motif Sasirangan, dan seni anyaman rotan.</p>
+                        <a href="kerajinan.html">Jelajahi</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        
+        <section id="tentang">
+            <h2>Tentang Kami</h2>
+            <p style="text-align: center;">Untuk informasi lebih lanjut Kunjungi juga Social media kami @zhaffryuu @njwzf @aalvnakhs_ @nurbktii_ @erdyreyhann @raihnrizky</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jelajah Borneo. Hak Cipta Dilindungi. | Didukung oleh Komunitas Pecinta Budaya Lokal.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const selector = document.getElementById('artikel-selector');
+            const artikelContainer = document.getElementById('artikel-container');
+            
+            selector.onchange = function() {
+                // Mendapatkan nilai (value) dari opsi yang dipilih
+                const selectedValue = this.value;
+
+                if (selectedValue === 'kalimantan-utama') {
+                    // Menambahkan kelas 'show' untuk menampilkan artikel
+                    artikelContainer.classList.add('show');
+                } else {
+                    // Menghapus kelas 'show' untuk menyembunyikan artikel
+                    artikelContainer.classList.remove('show');
+                }
+            };
+        });
+    </script>
+</body>
+</html>
+
+

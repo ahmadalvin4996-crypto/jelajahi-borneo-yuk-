@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cita Rasa Borneo: Juhu Singkah, Soto Banjar, dan Amplang</title>
+    <style>
+        /* CSS Dasar: Putih dan Hitam */
+        :root {
+            --color-background: #FFFFFF;
+            --color-text: #000000;
+            --color-accent: #FFC107; /* Kuning Kunyit untuk aksen kuliner */
+            --color-secondary: #008000; /* Hijau untuk Juhu Singkah */
+        }
+
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigasi Cepat - Disesuaikan untuk menampung tombol kembali */
+        .quick-nav {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            position: relative; /* Penting untuk penempatan tombol kembali */
+            display: flex; /* Menggunakan Flexbox untuk posisi tengah */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styling untuk Tombol Kembali (BARU) */
+        .back-button {
+            position: absolute;
+            left: 20px; /* Jarak dari kiri */
+            font-weight: bold;
+            color: var(--color-accent) !important; /* Menggunakan aksen kuning */
+            
+            /* Mengikuti gaya tautan nav lainnya */
+            text-decoration: none;
+            padding: 10px 15px;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .back-button:hover {
+            border-bottom-color: var(--color-accent) !important;
+        }
+
+        .quick-nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 15px;
+            border-bottom: 3px solid transparent;
+            font-weight: bold;
+            transition: border-color 0.3s;
+        }
+
+        .quick-nav a:hover {
+            border-bottom-color: var(--color-accent);
+        }
+
+        /* Tipografi */
+        h1 {
+            text-align: center;
+            color: var(--color-accent);
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            border-bottom: 3px solid var(--color-accent);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            font-size: 2em;
+        }
+
+        /* Konten Makanan */
+        .food-section {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .food-description {
+            flex: 2;
+            min-width: 300px;
+        }
+        .food-image {
+            flex: 1;
+            min-width: 250px;
+        }
+        .food-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Fitur Resep (Toggle) */
+        .recipe-toggle {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            border: none;
+            padding: 10px 15px;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .recipe-toggle:hover {
+            background-color: #ffb300;
+        }
+        .recipe-content {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-top: none;
+            margin-bottom: 20px;
+            display: none; /* Default hidden */
+        }
+
+        /* Sorotan */
+        .highlight-box {
+            border-left: 5px solid var(--color-secondary);
+            padding: 10px 15px;
+            background-color: #f7fff7;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #ddd;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="container">
+        <h1>Cita Rasa Borneo: Dari Hutan ke Raja Rasa</h1>
+        <p style="text-align: center; font-style: italic;">Juhu Singkah, Soto Banjar, dan Amplang – Tiga Ikon Kuliner Kalimantan.</p>
+    </header>
+    
+    <div class="quick-nav">
+        <a href="index.html" class="back-button">🏠 Menu Awal</a> 
+        
+        <a href="#juhu">Juhu Singkah</a>
+        <a href="#soto">Soto Banjar</a>
+        <a href="#amplang">Amplang</a>
+    </div>
+
+    <main class="container">
+        
+        <section id="juhu">
+            <h2>Juhu Singkah: Rasa Asli dari Pedalaman Dayak</h2>
+            
+            <div class="food-section">
+                <div class="food-description">
+                    <p>Juhu Singkah adalah hidangan sayur berkuah khas Suku Dayak yang memanfaatkan kekayaan hutan, terutama **Umbut Rotan Muda (Singkah)** sebagai bahan utamanya. Rasanya unik, perpaduan antara pahit, gurih, dan segar, yang sering dimasak bersama ikan Patin atau Jelawat.</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Filosofi Rasa:</strong> Rasa pahit dari rotan muda melambangkan tantangan hidup di hutan, sementara kuah gurih mewakili keharmonisan dengan alam.</p>
+                    </div>
+
+                    <button class="recipe-toggle" onclick="toggleRecipe('juhu-resep')">Lihat Resep Singkat Juhu Singkah</button>
+                    <div id="juhu-resep" class="recipe-content">
+                        <h3>Dapur Dayak: Resep Juhu Singkah Sederhana</h3>
+                        <h4>Bahan:</h4>
+                        <ul>
+                            <li>Rotan muda (umbut) yang sudah direbus.</li>
+                            <li>Ikan Patin/Jelawat (opsional).</li>
+                            <li>Bumbu halus (Bawang merah, Bawang putih, cabai, terasi).</li>
+                        </ul>
+                        <h4>Cara Membuat:</h4>
+                        <ol>
+                            <li>Tumis bumbu halus hingga harum.</li>
+                            <li>Masukkan ikan dan rotan muda, aduk rata.</li>
+                            <li>Tambahkan air, masak hingga rotan lunak dan kuah meresap.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="food-image">
+                    <img src="juhusingkah.jpg" alt="Juhu Singkah kuah dengan rotan muda" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="soto">
+            <h2>Soto Banjar: Kehangatan Raja Rempah Kalimantan Selatan</h2>
+
+            <div class="food-section">
+                <div class="food-image">
+                    <img src="soto.jpg" alt="Soto Banjar dengan perkedel dan sate" loading="lazy">
+                </div>
+                <div class="food-description">
+                    <p>Soto Banjar adalah hidangan sup kaya rempah dari Kalimantan Selatan. Kuahnya yang keruh memiliki aroma khas dari rempah-rempah 'raja' seperti **Kapulaga, Cengkeh, dan Kayu Manis**, disajikan dengan perkedel kentang, telur bebek, dan sate ayam.</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Filosofi Rasa:</strong> Rasa yang kaya dan hangat dari rempah kering melambangkan kekayaan budaya dan kehangatan sambutan Banjar. Penggunaan susu memperkaya kuah tanpa menghilangkan kesegaran rempah.</p>
+                    </div>
+                    
+                    <button class="recipe-toggle" onclick="toggleRecipe('soto-resep')">Lihat Bumbu Rahasia Soto Banjar</button>
+                    <div id="soto-resep" class="recipe-content">
+                        <h3>Bumbu Kunci Soto Banjar:</h3>
+                        <ul>
+                            <li>Rempah Utuh: Kapulaga, Cengkeh, Kayu Manis.</li>
+                            <li>Bawang merah, Bawang putih.</li>
+                            <li>Jintan, Pala, Jahe.</li>
+                        </ul>
+                        <p>Tips: Jangan lupa tambahkan perkedel kentang dan sate ayam yang dilumuri bumbu kacang tipis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="amplang">
+            <h2>Amplang: Si Renyah Pesisir, Oleh-Oleh Wajib</h2>
+            
+            <div class="food-section">
+                <div class="food-description">
+                    <p>Amplang adalah camilan renyah yang melegenda, terutama dari Kalimantan Timur dan Utara. Dibuat dari campuran daging ikan (Ikan Belida atau Tenggiri) dan tepung tapioka, Amplang memiliki rasa gurih ikan yang kuat dan tekstur yang ringan dan kopong. </p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Filosofi Rasa:</strong> Tekstur renyah dan rasa gurih ikan yang dominan mencerminkan kehidupan masyarakat pesisir yang dekat dengan laut dan sungai, di mana hasil laut menjadi sumber kehidupan utama.</p>
+                    </div>
+                </div>
+                <div class="food-image">
+                    <img src="amplang.jpg" alt="Kerupuk Amplang yang renyah" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 50px;">
+            <h2>Rencanakan Petualangan Kuliner Anda</h2>
+            <p>Borneo menunggu dengan cita rasa yang unik. Siap mencicipi kehangatan Soto Banjar dan ketangguhan Juhu Singkah?</p>
+            <a href="#" style="color: var(--color-text); background-color: var(--color-accent); padding: 12px 30px; display: inline-block; margin-top: 15px; border-radius: 5px; font-weight: bold; text-decoration: none;">Cari Penerbangan ke Kalimantan</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Borneo Kuliner. Sumber inspirasi rasa dari Kalimantan.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // FUNGSI UNTUK MENGAKTIFKAN FITUR TOGGLE RESEP
+        function toggleRecipe(id) {
+            var content = document.getElementById(id);
+            // Menggunakan class list untuk memanipulasi display (lebih bersih)
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+
+        // KODE JAVASCRIPT UNTUK LAZY LOADING TELAH DIHAPUS 
+        // KARENA loading="lazy" (Native HTML) SUDAH DIGUNAKAN.
+        // Ini membuat kode lebih efisien dan bersih.
+    </script>
+</body>
+</html>

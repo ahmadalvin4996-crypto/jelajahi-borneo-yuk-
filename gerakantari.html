@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borneo Bertutur: Gerak Enggang, Hudoq, dan Melodi Sape'</title>
+    <style>
+        /* CSS Dasar: Putih dan Hitam */
+        :root {
+            --color-background: #FFFFFF;
+            --color-text: #000000;
+            --color-accent: #8B0000; /* Merah Marun/Darah untuk aksen Dayak */
+            --color-maroon: #800000; /* Merah Marun */
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigasi */
+        .header-nav {
+            background-color: var(--color-background);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--color-accent);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            /* Modifikasi untuk menempatkan tombol di kiri */
+            display: flex;
+            justify-content: center; /* Pusatkan navigasi */
+            align-items: center;
+        }
+
+        /* Tombol Kembali (Baru Ditambahkan) */
+        .back-button {
+            position: absolute;
+            left: 20px;
+            font-weight: bold;
+            color: var(--color-maroon) !important; /* Agar kontras dengan hitam/cokelat */
+            /* Menggunakan gaya tautan navigasi agar konsisten */
+            padding: 8px 15px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            border-color: var(--color-maroon) !important;
+            background-color: rgba(128, 0, 0, 0.05) !important;
+        }
+
+        .header-nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            border-color: var(--color-accent);
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+
+        /* Tipografi */
+        h1 {
+            text-align: center;
+            color: var(--color-accent);
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            border-left: 5px solid var(--color-accent);
+            padding-left: 15px;
+            margin-top: 40px;
+            font-size: 2em;
+        }
+        
+        /* Gambar dan Lazy Loading */
+        img.lazyload {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            background-color: #f0f0f0; /* Placeholder */
+            min-height: 200px; 
+        }
+
+        /* Konten Khusus */
+        .feature-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .feature-box h3 {
+            color: var(--color-accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-nav">
+            <a href="index.html" class="back-button">🏠 Menu Awal</a>
+
+            <a href="#enggang">Tari Enggang</a>
+            <a href="#hudoq">Tari Hudoq</a>
+            <a href="#sape">Sape'</a>
+        </div>
+        <div class="container">
+            <h1>Borneo Bertutur: Menguak Filosofi Gerak Enggang, Hudoq, dan Melodi Sape'</h1>
+            <p style="text-align: center; font-style: italic;">Jendela menuju spiritualitas dan keindahan seni Suku Dayak.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="enggang">
+            <h2><a id="enggang"></a>Tari Enggang: Keanggunan Simbol Dewata</h2>
+            <p>Tari Enggang (Tari Burung Rangkong) adalah tarian tradisional Suku Dayak Kenyah. Gerakannya yang anggun meniru gerakan burung Enggang Gading yang dianggap suci dan sebagai perwujudan roh leluhur yang melambangkan kebesaran dan kepahlawanan.</p>
+
+            <img data-src="tari-enggang.jpg" class="lazyload" alt="Penari Tari Enggang dengan kostum khas bulu burung Rangkong" loading="lazy"> 
+            
+            <div class="feature-box">
+                <h3>Analisis Gerakan (Filosofi)</h3>
+                <p>Gerakan utama meliputi:</p>
+                <ul>
+                    <li><strong>Ngajak:</strong> Gerakan awal menyambut roh.</li>
+                    <li><strong>Ngelewai:</strong> Gerakan berjalan lambat dan anggun, menunjukkan kelembutan dan kesucian.</li>
+                    <li><strong>Ngasai:</strong> Gerakan mengepakkan sayap yang menggambarkan Enggang terbang tinggi menuju dunia atas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="hudoq">
+            <h2><a id="hudoq"></a>Tari Hudoq: Ritual Roh Pelindung Pertanian</h2>
+            <p>Tari Hudoq adalah tarian ritual yang sangat penting dalam siklus pertanian Suku Dayak, khususnya Kenyah, Bahau, dan Modang. Tarian ini dilakukan untuk memohon perlindungan dari roh jahat dan meminta kesuburan hasil panen.</p>
+
+            <img data-src="tari-hudoq.jpg" class="lazyload" alt="Barisan penari Tari Hudoq mengenakan topeng kayu dan kostum daun" loading="lazy"> 
+            
+            <div class="feature-box">
+                <h3>Mengenal Topeng Hudoq</h3>
+                <p>Topeng Hudoq terbuat dari kayu yang diukir menyerupai hewan buas, atau roh-roh leluhur. Setiap topeng memiliki makna tersendiri, melambangkan kekuatan alam yang diundang untuk melindungi ladang dari hama dan kegagalan panen. Tarian ini penuh energi, dengan hentakan kaki yang menggambarkan proses menanam benih.</p>
+            </div>
+        </section>
+
+        <section id="sape">
+            <h2><a id="sape"></a>Sape': Melodi Abadi dari Jantung Borneo</h2>
+            <p>Sape' adalah alat musik petik tradisional Suku Dayak, sering disebut sebagai "kecapi Borneo". Alat musik ini memiliki melodi yang khas, seringkali lembut, repetitif, dan meditatif, digunakan untuk mengiringi tarian maupun upacara penyembuhan.</p>
+
+            <img data-src="sape'.jpg" class="lazyload" alt="Alat musik Sape' dengan ukiran khas Dayak" loading="lazy"> 
+
+        <section id="penutup">
+            <h2>Dukung Pelestarian Budaya</h2>
+            <p>Seni tradisional ini menghadapi tantangan modernisasi. Dukungan kita sangat penting untuk memastikan Tari Enggang, Hudoq, dan alunan Sape' terus diwariskan kepada generasi mendatang.</p>
+            <a href="#" style="color: var(--color-background); background-color: var(--color-accent); padding: 10px 20px; display: inline-block; margin-top: 15px; border-radius: 5px;">Kunjungi Situs Konservasi Budaya Dayak</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Borneo Bertutur. Dikembangkan dengan latar belakang putih dan fokus pada konten.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyloadImages = document.querySelectorAll("img.lazyload");    
+            
+            if ("IntersectionObserver" in window) {
+                let observer = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyload = entry.target;
+                            lazyload.src = lazyload.dataset.src;
+                            lazyload.classList.remove("lazyload");
+                            observer.unobserve(lazyload);
+                        }
+                    });
+                });
+
+                lazyloadImages.forEach(function(image) {
+                    observer.observe(image);
+                });
+            } else {
+                // Fallback sederhana jika IntersectionObserver tidak didukung
+                lazyloadImages.forEach(function(image) {
+                    image.src = image.dataset.src;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

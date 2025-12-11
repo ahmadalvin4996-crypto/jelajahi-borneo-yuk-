@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Rupa Kalimantan: Ukiran Dayak, Sasirangan, dan Anyaman Rotan</title>
+    <style>
+        /* CSS Dasar: Putih dan Hitam */
+        :root {
+            --color-background: #FFFFFF;
+            --color-text: #000000;
+            --color-accent-dayak: #CC0000; /* Merah untuk Dayak */
+            --color-accent-banjar: #FFD700; /* Emas untuk Banjar */
+            --color-secondary: #444; /* Abu-abu tua untuk detail */
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigasi Cepat - Disesuaikan untuk menampung tombol kembali */
+        .quick-nav {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--color-secondary);
+            background-color: var(--color-background);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            /* Tambahan untuk posisi tombol back */
+            display: flex;
+            justify-content: center; /* Memusatkan tautan navigasi utama */
+            align-items: center;
+            position: relative; 
+        }
+
+        /* Styling untuk Tombol Kembali (BARU) */
+        .back-button {
+            position: absolute; 
+            left: 20px; /* Posisikan di kiri atas */
+            font-weight: bold;
+            color: var(--color-text);
+            background-color: transparent;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .back-button:hover {
+            color: var(--color-accent-dayak) !important;
+            border-bottom-color: var(--color-accent-dayak) !important;
+        }
+
+        .quick-nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 15px;
+            border-bottom: 3px solid transparent;
+            font-weight: bold;
+            transition: border-color 0.3s;
+        }
+
+        .quick-nav a:hover {
+            border-bottom-color: var(--color-accent-dayak);
+        }
+
+        /* Tipografi & Judul */
+        h1 {
+            text-align: center;
+            color: var(--color-accent-dayak);
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            border-left: 5px solid var(--color-accent-banjar);
+            padding-left: 15px;
+            margin-top: 40px;
+            font-size: 2em;
+        }
+
+        /* Fitur Visual & Interaktif */
+        .art-gallery {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .art-image, .art-description {
+            flex: 1 1 45%; 
+            min-width: 300px;
+        }
+        .art-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        /* Tabel Warna Sasirangan */
+        .color-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .color-table th, .color-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        .color-table th {
+            background-color: var(--color-accent-banjar);
+            color: var(--color-text);
+            text-align: center;
+        }
+        
+        /* Highlight Box (Analisis Simbol) */
+        .highlight-box {
+            border: 2px solid var(--color-accent-dayak);
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #fcfafa;
+        }
+        
+        /* Styling untuk highlight box yang menggunakan aksen Banjar/Emas */
+        .highlight-box.banjar-accent {
+            border-color: var(--color-accent-banjar);
+        }
+
+        /* Community Spotlight */
+        .community-spotlight {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .artisan-card {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .artisan-card:hover {
+            transform: translateY(-5px);
+            background-color: #f9f9f9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #ddd;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="container">
+        <h1>Kode Visual Borneo: Menguak Makna Ukiran Dayak, Sasirangan, dan Anyaman Rotan</h1>
+        <p style="text-align: center; font-style: italic;">Seni rupa sebagai bahasa yang menghubungkan manusia dengan alam dan spiritualitas.</p>
+    </header>
+    
+    <div class="quick-nav">
+        <a href="index.html" class="back-button">🏠 Menu Awal</a>
+        
+        <a href="#ukiran">Ukiran Dayak</a>
+        <a href="#sasirangan">Kain Sasirangan</a>
+        <a href="#anyaman">Seni Anyaman Rotan</a>
+    </div>
+
+    <main class="container">
+        
+        <section id="ukiran">
+            <h2>Ukiran Dayak: Filosofi dalam Setiap Garis</h2>
+            <p>Ukiran Dayak bukan hanya dekorasi, melainkan sebuah bahasa spiritual. Setiap garis dan motif mewakili kisah mitologi, perlindungan, atau status sosial. Klik gambar untuk analisis simbol!</p>
+            
+            <div class="art-gallery">
+                <div class="art-image">
+                    <img src="motif-asu.jpg" alt="Ukiran Dayak Motif Asu dan Enggang" loading="lazy" id="ukiran-img">
+                    <p style="font-size: 0.9em; text-align: center;">*Contoh ukiran kayu dengan motif Asu dan Enggang.</p>
+                </div>
+                <div class="art-description">
+                    <h3>Makna Motif Utama</h3>
+                    <div class="highlight-box">
+                        <h4>ASU (Anjing Mitologi)</h4>
+                        <p>Simbol penjaga dunia bawah dan pelindung spiritual. Gerakannya yang melingkar seringkali menjadi batas antara ruang suci dan ruang biasa.</p>
+                    </div>
+                    <div class="highlight-box banjar-accent">
+                        <h4>ENGGANG (Rangkong)</h4>
+                        <p>Simbol tertinggi Dewata, dunia atas, dan kebesaran. Paruh dan bulunya sering digunakan pada pakaian adat dan hiasan kepala.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sasirangan">
+            <h2>Kain Sasirangan: Cerita dari Ikatan dan Celupan Banjar</h2>
+
+            <div class="art-gallery">
+                <div class="art-description">
+                    <p>Sasirangan adalah kain tradisional Banjar (Kalimantan Selatan) yang dibuat dengan teknik celup rintang (*tie-dye*). Namanya berasal dari kata 'sirang' atau 'diikat'. Kain ini dulunya dipercaya memiliki kekuatan magis dan digunakan sebagai pengobatan.</p>
+                    
+                    <h3>Tabel Makna Warna</h3>
+                    <table class="color-table">
+                        <thead>
+                            <tr>
+                                <th>Warna</th>
+                                <th>Makna Filosofis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="color: red;">Merah</td>
+                                <td>Keberanian, Semangat Hidup</td>
+                            </tr>
+                            <tr>
+                                <td style="color: goldenrod;">Kuning Emas</td>
+                                <td>Keagungan, Kehormatan (Warna Raja)</td>
+                            </tr>
+                            <tr>
+                                <td style="color: green;">Hijau</td>
+                                <td>Kesuburan, Kehidupan Alam</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="art-image">
+                    <img src="motif-sasirangan.jpg" alt="Motif Kain Sasirangan yang cerah" loading="lazy">
+                    <p style="font-size: 0.9em; text-align: center;">*Motif seperti Ombak Sinamo dan Bintang Sudut Lima.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="anyaman">
+            <h2>Seni Anyaman Rotan: Keseimbangan Fungsionalitas</h2>
+            
+            <div class="art-gallery">
+                <div class="art-image">
+                    <img src="anyaman.jpg" alt="Keranjang dan tas dari anyaman rotan Dayak" loading="lazy" id="anyaman-img">
+                    <p style="font-size: 0.9em; text-align: center;">*Pola Anyaman Saat Ini: <span id="pola-nama" style="font-weight: bold; color: var(--color-secondary);">Pola Siku-Siku</span>. Klik gambar untuk melihat pola lain!</p>
+                </div>
+                <div class="art-description">
+                    <p>Rotan adalah bahan baku yang esensial bagi kehidupan Dayak, digunakan untuk membuat perlengkapan sehari-hari seperti tas (*lanjuk*), topi, dan tikar. Seni anyaman menunjukkan keterampilan teknis dan kesabaran tinggi pengrajinnya.</p>
+                    
+                    <h3>Pola Anyaman Ikonik</h3>
+                    <ul>
+                        <li>**Pola Mata Bintang:** Pola geometris yang sering digunakan pada tikar, melambangkan harapan.</li>
+                        <li>**Pola Siku-Siku:** Pola sederhana dan kuat, menunjukkan ketangguhan.</li>
+                        <li>**Pola Naga/Ular:** Digunakan pada anyaman upacara, menghubungkannya dengan motif ukiran.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p><strong>Fungsi:</strong> Anyaman adalah perpaduan sempurna antara fungsi (keranjang kuat untuk membawa hasil hutan) dan estetika (pola yang indah).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="komunitas">
+            <h2 style="border-left: 5px solid var(--color-secondary);">Seniman di Balik Karya: Dukung Pelestari Budaya</h2>
+            <p style="text-align: center;">Warisan ini hidup berkat para pengrajin. Klik kartu untuk melihat profil singkat mereka!</p>
+            
+            <div class="community-spotlight">
+                <div class="artisan-card" onclick="alert('Profil: Bapak Anton, Ahli Ukir Dayak Kayan. Fokus pada pelestarian motif Asu dan Enggang.')">
+                    <h3>Bapak Anton</h3>
+                    <p style="color: var(--color-accent-dayak);">Ukiran Kayu Dayak</p>
+                </div>
+                <div class="artisan-card" onclick="alert('Profil: Ibu Siti, Pengrajin Sasirangan Banjar. Meneruskan teknik celup rintang tradisional.')">
+                    <h3>Ibu Siti</h3>
+                    <p style="color: var(--color-accent-banjar);">Kain Sasirangan</p>
+                </div>
+                <div class="artisan-card" onclick="alert('Profil: Sdr. Risa, Penganyam Rotan Muda. Spesialisasi pada pola-pola Mata Bintang.')">
+                    <h3>Risa</h3>
+                    <p style="color: var(--color-secondary);">Seni Anyaman Rotan</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Seni Rupa Kalimantan. Pelestarian Budaya Visual Indonesia.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Data untuk fitur slider pola rotan
+        const polaRotan = [
+            { name: "Pola Siku-Siku", src: "anyaman.jpg" }, // Menggunakan gambar yang ada sebagai placeholder
+            { name: "Pola Mata Bintang", src: "anyaman_rotan_bintang_placeholder.jpg" },
+            { name: "Pola Naga", src: "anyaman_rotan_naga_placeholder.jpg" }
+        ];
+        let currentPolaIndex = 0;
+
+        // FUNGSI UNTUK FITUR ANALISIS SIMBOL UKIRAN (SIMULASI INTERAKSI)
+        const ukiranImg = document.getElementById('ukiran-img');
+        if (ukiranImg) {
+            ukiranImg.style.cursor = 'pointer';
+            ukiranImg.addEventListener('click', function() {
+                alert("ANALISIS SIMBOL: Ukiran ini menunjukkan sinergi antara motif Hewan Mitologi (Asu) dan Paruh Enggang, melambangkan keseimbangan kosmos Dayak.");
+            });
+        }
+        
+        // FUNGSI UNTUK FITUR SLIDER POLA ANYAMAN ROTAN
+        const anyamanImg = document.getElementById('anyaman-img');
+        const polaNama = document.getElementById('pola-nama');
+        
+        if (anyamanImg) {
+            anyamanImg.style.cursor = 'pointer';
+            anyamanImg.addEventListener('click', function() {
+                // Maju ke pola berikutnya
+                currentPolaIndex = (currentPolaIndex + 1) % polaRotan.length;
+                
+                // Update gambar dan teks (simulasi)
+                anyamanImg.src = polaRotan[currentPolaIndex].src; 
+                polaNama.textContent = polaRotan[currentPolaIndex].name;
+            });
+        }
+    </script>
+</body>
+</html>

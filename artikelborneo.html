@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borneo: Pulau Tiga Negara, Ribuan Kehidupan</title>
+    
+    <style>
+        /* BASE STYLES */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* ----------------------- */
+        /* 1. STICKY HEADER */
+        /* ----------------------- */
+        #sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #004d40; /* Hijau Tua Borneo */
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #sticky-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .header-controls input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            width: 150px;
+        }
+
+        .toggle-all-btn {
+            background-color: #ff9900;
+            color: #000;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ----------------------- */
+        /* 2. MAIN CONTENT & PADDING */
+        /* ----------------------- */
+        #main-content {
+            /* Padding atas harus sama atau lebih besar dari tinggi header */
+            padding-top: 80px; 
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        #hero-section {
+            padding: 40px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #d9e7e5, #f4f7f6);
+            margin-bottom: 20px;
+        }
+        
+        /* ----------------------- */
+        /* 3. ACCORDION STYLES */
+        /* ----------------------- */
+        .accordion-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .accordion-title {
+            background-color: #e6f2f0; /* Hijau Muda */
+            padding: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .accordion-title:hover {
+            background-color: #d8e5e3;
+        }
+
+        .accordion-title .icon {
+            font-size: 1.4em;
+            margin-right: 10px;
+        }
+
+        .accordion-title .arrow {
+            transition: transform 0.3s;
+        }
+        
+        .accordion-title.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 18px;
+            max-height: 0; /* Default tertutup */
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+            /* Konten di dalamnya */
+            line-height: 1.6;
+        }
+        
+        .accordion-content div {
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .accordion-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="sticky-header">
+        <h2>Borneo Insight</h2>
+        <div class="header-controls">
+            <input type="text" id="search-input" placeholder="Cari Segmen..." onkeyup="filterSections()">
+            <button class="toggle-all-btn" onclick="toggleAll()">Buka Semua</button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        
+        <section id="hero-section">
+            <h1>Selamat Datang di Jantung Asia Tenggara</h1>
+            <p>Jelajahi keunikan alam, budaya, dan masa depan pulau terbesar ketiga di dunia.</p>
+        </section>
+
+        <section id="accordion-container">
+            
+            <div class="accordion-item" id="section-alam">
+                <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <div><span class="icon">🌿</span> 1. Keajaiban Alam dan Ancaman Konservasi</div>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div>
+                        <h3>A. Para Penghuni Endemik</h3>
+                        <p>Borneo adalah rumah bagi Orangutan, Bekantan (monyet Belanda) yang unik, dan Gajah Kerdil Borneo. Satwa-satwa ini menghadapi ancaman kritis akibat deforestasi. Kita harus melindungi habitat mereka di Taman Nasional seperti Tanjung Puting.</p>
+                        <img src="https://via.placeholder.com/800x200?text=Gambar+Orangutan+atau+Bekantan" alt="Satwa Endemik">
+                        
+                        <h3>C. Statistik Deforestasi</h3>
+                        <p>Laju hilangnya hutan di Borneo adalah salah satu yang tertinggi di dunia, didorong oleh perkebunan kelapa sawit dan pertambangan. Upaya restorasi menjadi sangat mendesak.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" id="section-budaya">
+                <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <div><span class="icon">🗿</span> 2. Warisan Abadi Suku Dayak</div>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div>
+                        <h3>B. Seni Tubuh dan Jiwa</h3>
+                        <p>Tato tradisional Dayak adalah peta kehidupan dan status sosial. Setiap motif memiliki makna spiritual yang mendalam, menghubungkan individu dengan alam dan leluhur.</p>
+                        
+                        <h3>C. Melodi Hutan (Sape)</h3>
+                        <p>Sape adalah alat musik petik yang menghasilkan melodi unik dari pedalaman. Sering dimainkan dalam upacara adat dan kini menjadi simbol budaya Borneo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" id="section-sungai">
+                <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <div><span class="icon">🌊</span> 3. Sungai dan Geografi: Urat Nadi Kehidupan</div>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div>
+                        <h3>A. Sungai Raksasa</h3>
+                        <p>Sungai Kapuas (terpanjang di Indonesia), Mahakam, dan Barito berfungsi sebagai jalur transportasi vital dan sumber kehidupan. Ekosistem sungai ini sangat rentan terhadap polusi tambang.</p>
+                        <p>Borneo terbagi secara politik antara Indonesia, Malaysia (Sabah & Sarawak), dan Brunei Darussalam.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" id="section-ikn">
+                <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <div><span class="icon">🏗️</span> 4. Masa Depan dan Proyek IKN Nusantara</div>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div>
+                        <h3>A. Profil IKN</h3>
+                        <p>Ibu Kota Negara (IKN) Nusantara di Kalimantan Timur dirancang dengan konsep *Forest City*. Pembangunan ini bertujuan menyeimbangkan modernisasi dengan pelestarian lingkungan, meskipun tantangan implementasi tetap besar.</p>
+                        
+                        <h3>D. Ekowisata Berkelanjutan</h3>
+                        <p>Pengembangan ekowisata menjadi kunci untuk masa depan Borneo, menawarkan alternatif ekonomi selain eksploitasi sumber daya alam.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 30px; background-color: #eee; margin-top: 30px;">
+        <p>&copy; 2025 Borneo Insight. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script>
+        function toggleAccordion(titleElement) {
+            const content = titleElement.nextElementSibling;
+            const arrow = titleElement.querySelector('.arrow');
+            
+            // Toggle status active
+            titleElement.classList.toggle('active');
+
+            if (content.style.maxHeight) {
+                // Tutup
+                content.style.maxHeight = null;
+            } else {
+                // Buka
+                // Atur maxHeight ke scrollHeight agar transisi berjalan mulus
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        function toggleAll() {
+            const items = document.querySelectorAll('.accordion-item');
+            const button = document.querySelector('.toggle-all-btn');
+            
+            // Cek apakah ada yang terbuka. Jika ada, tutup semua. Jika semua tertutup, buka semua.
+            let isAnyOpen = false;
+            items.forEach(item => {
+                if (item.querySelector('.accordion-title').classList.contains('active')) {
+                    isAnyOpen = true;
+                }
+            });
+
+            items.forEach(item => {
+                const title = item.querySelector('.accordion-title');
+                const content = item.querySelector('.accordion-content');
+                
+                if (isAnyOpen) {
+                    // Tutup Semua
+                    title.classList.remove('active');
+                    content.style.maxHeight = null;
+                    button.textContent = "Buka Semua";
+                } else {
+                    // Buka Semua
+                    title.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    button.textContent = "Tutup Semua";
+                }
+            });
+        }
+        
+        function filterSections() {
+            const input = document.getElementById('search-input');
+            const filter = input.value.toUpperCase();
+            const container = document.getElementById('accordion-container');
+            const items = container.querySelectorAll('.accordion-item');
+
+            items.forEach(item => {
+                const titleText = item.querySelector('.accordion-title').textContent || item.querySelector('.accordion-title').innerText;
+                if (titleText.toUpperCase().indexOf(filter) > -1) {
+                    item.style.display = ""; // Tampilkan
+                } else {
+                    item.style.display = "none"; // Sembunyikan
+                }
+            });
+        }
+
+        // DEEP LINKING: Buka bagian jika ada hash di URL saat load
+        window.onload = function() {
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetItem = document.getElementById(targetId);
+                if (targetItem) {
+                    const title = targetItem.querySelector('.accordion-title');
+                    // Memastikan toggle dibuka hanya jika belum aktif
+                    if (!title.classList.contains('active')) {
+                        toggleAccordion(title);
+                        // Scroll sedikit ke bawah agar sticky header tidak menutupi
+                        window.scrollTo(0, targetItem.offsetTop - document.getElementById('sticky-header').offsetHeight - 10);
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>
